@@ -4,9 +4,7 @@
         <Require feature="osapi"/>
     </ModulePrefs>
     <Content type="html"><![CDATA[
-        Hello, <span id="user"></span>!
-        <script type="text/javascript">
-            function init() {
+       
               osapi.people.get({ userId: '@viewer', groupId: '@all' }).execute(function(response) {
     var users = response.list;
     for (var i in users) {
@@ -15,7 +13,7 @@
     }
 });
 
-            }
+            
             
             gadgets.util.registerOnLoadHandler(init);
         </script>
