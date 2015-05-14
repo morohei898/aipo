@@ -7,12 +7,9 @@
         <Require feature="dynamic-height"/>
         <Require feature="aipostyle"/>
     </ModulePrefs>
-    osapi.people.get({ userId: '@viewer', groupId: '@all' }).execute(function(response) {
-
-    var users = response.list{
-    for (var i in users) {
-        var userId = users[i].id;
-        var displayName = users[i].displayName;
-    }
-});
 </Module>
+osapi.people.get({ userId: '@viewer' }).execute(function(response) {
+    var userId = response.id;
+    var displayName = response.displayName;
+});
+
