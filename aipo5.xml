@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs title="UserList">
+        <Require feature="osapi"/>
+    </ModulePrefs>
+    <Content type="html"><![CDATA[
+        Hello, <span id="user"></span>!
+        <script type="text/javascript">
+            function init() {
+              osapi.people.get({ userId: '@viewer', groupId: '@all' }).execute(function(response) {
+    var users = response.list;
+    for (var i in users) {
+        var userId = users[i].id;
+        var displayName = users[i].displayName;
+    }
+});
+            }
+            
+            gadgets.util.registerOnLoadHandler(init);
+        </script>
+        ]]>
+    </Content>
+</Module>
