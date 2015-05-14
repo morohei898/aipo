@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs
+            title="Userlist"
+            description="user list" height="18">
+        <Require feature="osapi"/>
+        <Require feature="dynamic-height"/>
+        <Require feature="aipostyle"/>
+    </ModulePrefs>
+</Module>
+osapi.people.get({ userId: '@viewer' }).execute(function(response) {
+
+
+    var userId = response.id;
+
+    var displayName = response.displayName;
+
+});
+
